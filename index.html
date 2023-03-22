@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APPLE CALCULATOR</title>
+    <link rel="stylesheet" href="applecalculator.css">
+</head>
+<body>
+   <center>
+       <div class="main">
+        <div class="nasted">
+        <div class="wrapper">
+
+            <input id="result" type="text" placeholder="0">
+    
+            <div class="sec1">
+                <button class="grey" onclick="cancel()">AC</button>
+                <button class="grey" onclick="AT_ADD('+/-')">+/-</button>
+                <button class="grey" onclick="AT_ADD('%')">%</button>
+                <button class="yellow" onclick="AT_ADD('+')">+</button>
+            </div>
+            <div class="sec2">
+                <button class="black" onclick="AT_ADD(7)">7</button>
+                <button class="black" onclick="AT_ADD(8)">8</button>
+                <button class="black" onclick="AT_ADD(9)">9</button>
+                <button class="yellow" onclick="AT_ADD('*')">*</button>
+            </div>
+            <div class="sec3">
+                <button class="black" onclick="AT_ADD(4)">4</button>
+                <button class="black" onclick="AT_ADD(5)">5</button>
+                <button class="black" onclick="AT_ADD(6)">6</button>
+                <button class="yellow" onclick="AT_ADD('-')">-</button>
+            </div>
+            <div class="sec4">
+                <button  class="black" onclick="AT_ADD(1)">1</button>
+                <button  class="black" onclick="AT_ADD(2)">2</button>
+                <button  class="black" onclick="AT_ADD(3)">3</button>
+                <button class="yellow" onclick="AT_ADD('/')">/</button>
+            </div>
+            <div class="sec5">
+                <button class="bigzero" onclick="AT_ADD(0)">0</button>
+                <button class="black" onclick="AT_ADD('.')">.</button>
+                <button class="yellow" onclick="exe('=')">=</button>
+            </div>
+        </div>
+        </div>
+        </div>
+   </center>
+
+
+    <script>
+        var val = document.getElementById("result");
+
+        function AT_ADD(p){
+            val.value+=p
+        }
+
+        function cls(){
+            val.value="";
+        }
+         
+        function exe(){
+            val.value=eval(val.value)
+        }
+
+        function cancel(){
+            val.value=val.value.substr(0,val.value.length-1);
+        }
+        
+    </script>
+</body>
+</html>
